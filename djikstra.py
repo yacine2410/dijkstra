@@ -13,7 +13,7 @@ class Graph:
             self.graph[node1] = {}
         self.graph[node1][node2] = weight #Add connection to node2
 
-    def shortest_distances(self, source: str):
+    def dijkstra(self, source: str):
         #initialize all node values with infinity:
         distances = {node: float("inf") for node in self.graph}
         distances[source] = 0 #distance to the source node is 0
@@ -54,6 +54,6 @@ if __name__ == "__main__":
     }  
     
     G = Graph(graph = graph)
-    distances = G.shortest_distances("B")
+    distances = G.dijkstra("B")
     to_F = distances["F"]
     print(f"The shortest distance from B to F is {to_F}")
